@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorPlayButton">#4CAF50</color>
+    <color name="colorMainMenuButton">#50D7F1</color>
+    <color name="colorMainMenuBG">#B69CE4</color>
+
+    <color name="gameDisclaimerBackground">#BC7A6F6F</color>
+</resources>
