@@ -7,36 +7,56 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+
 public class MainActivity extends AppCompatActivity {
 
-    PlayerType vsPlayer;
-    Button playerButton;
+    private final int PLAYER_TYPE_SINGLE = 0x01;
+    private final int PLAYER_TYPE_MULTI = 0x02;
+
+    int playerType;
+
+    Button main_button_play;
+    Button main_button_playerType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        vsPlayer = PlayerType.ComputerPlayer;
-        playerButton = (Button) findViewById(R.id.button_play_against);
-        playerButton.setText(R.string.versus_comp_player);
+        playerType = PLAYER_TYPE_SINGLE;
 
-    }
+        main_button_play = findViewById(R.id.main_play);
+        main_button_play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-    void onPlayButtonSelected(View view){
-        Intent intent = new Intent(this, GameScreen.class);
-        intent.putExtra("OppositePlayer", PlayerType.HumanPlayer);
-        startActivity(intent);
-    }
+                if(playerType == PLAYER_TYPE_SINGLE){
+                    Intent intent = new Intent(MainActivity.this, GameActivity.class);
+                    startActivity(intent);
+                }
 
-    void onVsButtonSelected(View view){
-        Button button = (Button) view;
-        if(vsPlayer== PlayerType.ComputerPlayer){
-            vsPlayer = PlayerType.HumanPlayer;
-            ((Button) view).setText(R.string.versus_human_player);
-        }
-        else if(vsPlayer== PlayerType.HumanPlayer){
-            vsPlayer = PlayerType.ComputerPlayer;
-            ((Button) view).setText(R.string.versus_comp_player);
-        }
+                //TODO : implement play trigger
+            }
+        });
+
+        main_button_playerType = findViewById(R.id.main_player_type);
+        main_button_playerType.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button button = (Button) view;
+
+                switch (playerType){
+                    case PLAYER_TYPE_SINGLE:
+                        playerType = PLAYER_TYPE_MULTI;
+                        button.setText(R.string.main_button_player_type_multi);
+                        break;
+
+                    case PLAYER_TYPE_MULTI:
+                        playerType = PLAYER_TYPE_SINGLE;
+                        button.setText(R.string.main_button_player_type_single);
+                        break;
+                }
+            }
+        });
+
     }
 }

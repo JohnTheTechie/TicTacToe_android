@@ -1,13 +1,9 @@
 <resources>
     <string name="app_name">TicTacToe</string>
-    <string name="play_button">Play</string>
-    <string name="versus_human_player">vs Human</string>
-    <string name="versus_comp_player">vs Comp</string>
 
-    <string name="reset_button">Reset</string>
-    <string name="mainmenu_button">Menu</string>
+    <string name="main_button_play">Play</string>
+    <string name="main_button_player_type_single">Single Player</string>
+    <string name="main_button_player_type_multi">Multi player</string>
 
-    <string name="winner_vs_Human">YOU WON!</string>
-    <string name="winner_vs_computer">YOU WON!</string>
-    <string name="loser_vs_computer">YOU LOSE!</string>
+
 </resources>

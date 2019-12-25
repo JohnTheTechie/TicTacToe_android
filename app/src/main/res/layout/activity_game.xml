@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity">
+
+    <ImageView
+        android:id="@+id/game_player_indicator"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.050000012"
+        app:srcCompat="@mipmap/o" />
+
+    <TextView
+        android:id="@+id/game_instructor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_board_holder" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/game_board_holder"
+        android:layout_width="@dimen/game_boaard_dimen"
+        android:layout_height="@dimen/game_boaard_dimen"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/game_instructor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_player_indicator"
+        app:layout_constraintVertical_bias="0.25">
+
+        <Button
+            android:id="@+id/game_tapper11"
+            android:layout_width="@dimen/game_tapper_dimen"
+            android:layout_height="@dimen/game_tapper_dimen"
+            android:text="Button"
+            app:layout_constraintBottom_toTopOf="@+id/game_tapper21"
+            app:layout_constraintEnd_toStartOf="@+id/game_tapper12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/game_tapper12"
+            android:layout_width="@dimen/game_tapper_dimen"
+            android:layout_height="@dimen/game_tapper_dimen"
+            android:text="Button"
+            app:layout_constraintBottom_toTopOf="@+id/game_tapper22"
+            app:layout_constraintEnd_toStartOf="@+id/game_tapper13"
+            app:layout_constraintStart_toEndOf="@+id/game_tapper11"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/game_tapper13"
+            android:layout_width="@dimen/game_tapper_dimen"
+            android:layout_height="@dimen/game_tapper_dimen"
+            android:text="Button"
+            app:layout_constraintBottom_toTopOf="@+id/game_tapper23"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/game_tapper12"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/game_tapper21"
+            android:layout_width="@dimen/game_tapper_dimen"
+            android:layout_height="@dimen/game_tapper_dimen"
+            android:text="Button"
+            app:layout_constraintBottom_toTopOf="@+id/game_tapper31"
+            app:layout_constraintEnd_toStartOf="@+id/game_tapper22"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/game_tapper11" />
+
+        <Button
+            android:id="@+id/game_tapper22"
+            android:layout_width="@dimen/game_tapper_dimen"
+            android:layout_height="@dimen/game_tapper_dimen"
+            android:text="Button"
+            app:layout_constraintBottom_toTopOf="@+id/game_tapper32"
+            app:layout_constraintEnd_toStartOf="@+id/game_tapper23"
+            app:layout_constraintStart_toEndOf="@+id/game_tapper21"
+            app:layout_constraintTop_toBottomOf="@+id/game_tapper12" />
+
+        <Button
+            android:id="@+id/game_tapper23"
+            android:layout_width="@dimen/game_tapper_dimen"
+            android:layout_height="@dimen/game_tapper_dimen"
+            android:text="Button"
+            app:layout_constraintBottom_toTopOf="@+id/game_tapper33"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/game_tapper22"
+            app:layout_constraintTop_toBottomOf="@+id/game_tapper13" />
+
+        <Button
+            android:id="@+id/game_tapper31"
+            android:layout_width="@dimen/game_tapper_dimen"
+            android:layout_height="@dimen/game_tapper_dimen"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/game_tapper32"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/game_tapper21" />
+
+        <Button
+            android:id="@+id/game_tapper32"
+            android:layout_width="@dimen/game_tapper_dimen"
+            android:layout_height="@dimen/game_tapper_dimen"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/game_tapper33"
+            app:layout_constraintStart_toEndOf="@+id/game_tapper31"
+            app:layout_constraintTop_toBottomOf="@+id/game_tapper22" />
+
+        <Button
+            android:id="@+id/game_tapper33"
+            android:layout_width="@dimen/game_tapper_dimen"
+            android:layout_height="@dimen/game_tapper_dimen"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/game_tapper32"
+            app:layout_constraintTop_toBottomOf="@id/game_tapper23" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
