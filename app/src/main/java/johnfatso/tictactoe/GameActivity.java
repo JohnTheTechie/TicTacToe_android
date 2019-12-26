@@ -5,39 +5,39 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 public class GameActivity extends AppCompatActivity {
 
+    private final String LOG_TAG = "TAG";
+
     Button[][] tappers;
     ConstraintLayout board;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        //removing the action bar from the game screen
         ActionBar bar = getSupportActionBar();
         bar.hide();
 
+        //creating and defining the buttons
         configureBoard();
 
     }
 
     void configureBoard(){
 
-        int tapperSize;
-
         tappers = new Button[3][3];
         board = findViewById(R.id.game_board_holder);
 
-
-        tapperSize = board.getWidth()-10;
-
-        Toast.makeText(this, "tappersize : "+tapperSize, Toast.LENGTH_SHORT).show();
-
+        //button references created
         tappers[0][0] = findViewById(R.id.game_tapper11);
         tappers[0][1] = findViewById(R.id.game_tapper12);
         tappers[0][2] = findViewById(R.id.game_tapper13);
@@ -48,6 +48,7 @@ public class GameActivity extends AppCompatActivity {
         tappers[2][1] = findViewById(R.id.game_tapper32);
         tappers[2][2] = findViewById(R.id.game_tapper33);
 
+        //OnClickListeneres for all nine buttons defined
         tappers[0][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
