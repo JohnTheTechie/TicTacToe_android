@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(playerType == PLAYER_TYPE_SINGLE){
                     Intent intent = new Intent(MainActivity.this, GameActivity.class);
+                    intent.putExtra("Players", "single");
                     startActivity(intent);
                 }
 

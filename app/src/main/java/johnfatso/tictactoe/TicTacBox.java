@@ -4,7 +4,7 @@ package johnfatso.tictactoe;
  * This class will maintain the status of the board
  * It contains the reference to the player who instantiated it, and to the board
  *
- * The caller can intialize, set the cell, get the cell occupant and calculate victory judgement
+ * The caller can initialize, set the cell, get the cell occupant and calculate victory judgement
  *
  */
 public class TicTacBox {
@@ -43,7 +43,7 @@ public class TicTacBox {
      * @param cell Cellid
      * @return occupying cell
      */
-    GamePiece getcell(CellID cell){
+    GamePiece getPiece(CellID cell){
         return tappers[cell.x][cell.y];
     }
 
@@ -73,9 +73,10 @@ public class TicTacBox {
         if ( isMatch(tappers[0][0], tappers[1][1], tappers[2][2]) != null )
             return getPlayer(tappers[0][0]);
 
-        if ( isMatch(tappers[0][3], tappers[1][1], tappers[2][0]) != null )
+        if ( isMatch(tappers[0][2], tappers[1][1], tappers[2][0]) != null )
             return getPlayer(tappers[0][0]);
 
+        //Todo: implement check for board full without a winner condition
         //if none have a match return null
         return null;
     }
